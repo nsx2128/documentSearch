@@ -1,6 +1,10 @@
 # documentSearch
 Document Search problem
 
+/**/
+This is a simple groovy script that can be run with simply calling the function with the 2 parameters being matchValue and the document to search. It can be used on any groovy console and I used https://www.tutorialspoint.com/execute_groovy_online.php . 
+/**/
+
 Which approach is fastest? Why?
 
 The simple string match is definitely not the fastest. The regex search works in a similar way as the simple search but it allows for more than 1 word to be matched at a time and is better optimized so it runs faster than simple string search. The fastest approach however is going to be preprocessing the content and searching the index. The reason for this we are able to remove excess fluff from the document that we know will not match the search term. We can also remove nuances such as upper case vs lower case differences. The big reason it works fastest is that once we have traversed the document once and indexed everything, there is not a need to traverse it again for different search terms. This cuts down on time significantly.   
