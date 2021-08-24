@@ -7,7 +7,7 @@ def String simpleMatch(String document, String matchValue) {
     Date start = new Date()
     Integer relevancy = 0
     Integer matchSize = matchValue.size() - 1
-    for(i = 0; i<document.size(); i++) {
+    for(i = 0; i<(document.size() - matchSize); i++) {
         if(matchValue == document[i..(i + matchSize)]) {
             relevancy += 1
         }
