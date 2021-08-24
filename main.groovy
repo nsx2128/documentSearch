@@ -29,12 +29,16 @@ def String regexMatch(String document, String regexValue) {
     return "Elapsed time: $td, $results matches"
 }
 
-/*
-def preProcessMatch(String document, String matchValue) {
+def String preProcessMatch(String document, String matchValue) {
     Date start = new Date()
-    document = document.toLowerCase().replaceAll("\\s", "")
+    List wordList = document.toLowerCase().tokenize(" ")
+    def lowerCaseMatchValue = matchValue.toLowerCase()
+    Map index = [:].withDefault{ 0 }
+    wordList.each {
+        index[it] += 1
+    }
+    def results = index[lowerCaseMatchValue]
     Date stop = new Date()
     TimeDuration td = TimeCategory.minus( stop, start )
     return "Elapsed time: $td, $results matches"
 }
-*/
