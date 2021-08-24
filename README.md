@@ -3,7 +3,7 @@ Document Search problem
 
 Which approach is fastest? Why?
 
-The simple string match is definitely not the fastest. The regex search works in a similar way as the simple search but it allows for more than 1 word to be matched at a time. The fastest approach is going to be preprocessing the content and searching the index. The reason for this we are able to remove excess fluff from the document that we know will not match the search term. We can also remove nuances such as upper case vs lower case differences. The big reason it works fastest is that once we have traversed the document once and indexed everything, there is not a need to traverse it again for different search terms. This cuts down on time significantly.   
+The simple string match is definitely not the fastest. The regex search works in a similar way as the simple search but it allows for more than 1 word to be matched at a time and is better optimized so it runs faster than simple string search. The fastest approach however is going to be preprocessing the content and searching the index. The reason for this we are able to remove excess fluff from the document that we know will not match the search term. We can also remove nuances such as upper case vs lower case differences. The big reason it works fastest is that once we have traversed the document once and indexed everything, there is not a need to traverse it again for different search terms. This cuts down on time significantly.   
 
 
 Provide some thoughts on what you would do on the software or hardware side to make this program scale to handle massive content and/or very large request volume (5000 requests/second or more).
