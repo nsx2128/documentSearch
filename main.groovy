@@ -31,7 +31,7 @@ def String regexMatch(String document, String regexValue) {
 
 def String preProcessMatch(String document, String matchValue) {
     Date start = new Date()
-    List wordList = document.toLowerCase().tokenize(" ")
+    List wordList = document.toLowerCase().split("\\W")
     def lowerCaseMatchValue = matchValue.toLowerCase()
     Map index = [:].withDefault{ 0 }
     wordList.each {
